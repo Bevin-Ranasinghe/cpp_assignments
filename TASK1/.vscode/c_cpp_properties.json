@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "name": "macos-clang-arm64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+<<<<<<< HEAD
+      "compilerPath": "/usr/bin/clang",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+=======
+      "defines": [],
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+>>>>>>> f753e5f (Add password strength checker and related binary files)
+      "intelliSenseMode": "macos-clang-arm64",
+      "compilerArgs": [
+        ""
+      ]
+    }
+  ],
+  "version": 4
+}
