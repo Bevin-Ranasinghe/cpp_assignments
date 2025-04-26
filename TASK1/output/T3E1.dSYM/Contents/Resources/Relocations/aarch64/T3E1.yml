@@ -1,5 +1,5 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     '/Users/Work/TASK3/output/T3E1'
+binary-path:     '/Users/Work/cpp_assignments/TASK1/output/T3E1'
 relocations:     []
 ...
