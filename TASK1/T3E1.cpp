@@ -34,11 +34,11 @@ int main() {
     myBook.setTitle("C++ Programming");
     cout << "Title: " << myBook.getTitle() << endl;
 
-    // Part B: Set and print publisher
+    
     myBook.publisher = "TechBooks Publishing";
     cout << "Publisher: " << myBook.publisher << endl;
 
-    // Part C: Call displayAuthorInfo
+    
     myBook.displayAuthorInfo();
 
     return 0;
