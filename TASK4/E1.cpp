@@ -10,39 +10,38 @@ public:
     // Constructor
     Complex(double r = 0, double i = 0) : real(r), imag(i) {}
 
-    // Overload + operator
+    // Overload +
     Complex operator+(const Complex& other) const {
         return Complex(real + other.real, imag + other.imag);
     }
 
-    // Overload - operator
+    // Overload -
     Complex operator-(const Complex& other) const {
         return Complex(real - other.real, imag - other.imag);
     }
 
-    // Overload / operator
+    // Overload /
     Complex operator/(const Complex& other) const {
-        double denominator = other.real * other.real + other.imag * other.imag;
-        if (denominator == 0) {
-            throw runtime_error("Division by zero");
-        }
-        double newReal = (real * other.real + imag * other.imag) / denominator;
-        double newImag = (imag * other.real - real * other.imag) / denominator;
-        return Complex(newReal, newImag);
+        double denominator = (other.real * other.real + other.imag * other.imag);
+        double new_real = (real * other.real + imag * other.imag) / denominator;
+        double new_imag = (imag * other.real - real * other.imag) / denominator;
+        return Complex(new_real, new_imag);
     }
 
-    // Friend function to overload << operator
-    friend ostream& operator<<(ostream& os, const Complex& c) {
-        os << c.real;
-        if (c.imag >= 0) {
-            os << " + " << c.imag << "i";
-        } else {
-            os << " - " << -c.imag << "i";
-        }
-        return os;
-    }
+    // Friend function to overload <<
+    friend ostream& operator<<(ostream& out, const Complex& c);
 };
 
+// Overload << outside the class
+ostream& operator<<(ostream& out, const Complex& c) {
+    if (c.imag >= 0)
+        out << c.real << " + " << c.imag << "i";
+    else
+        out << c.real << " - " << -c.imag << "i";
+    return out;
+}
+
+// Main function to test
 int main() {
     Complex c1(4, 5), c2(2, -3);
 
@@ -51,12 +50,7 @@ int main() {
 
     cout << "Sum = " << c1 + c2 << endl;
     cout << "Difference = " << c1 - c2 << endl;
-
-    try {
-        cout << "Quotient = " << c1 / c2 << endl;
-    } catch (const runtime_error& e) {
-        cout << "Error: " << e.what() << endl;
-    }
+    cout << "Quotient = " << c1 / c2 << endl;
 
     return 0;
 }
