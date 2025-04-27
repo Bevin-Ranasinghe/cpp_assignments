@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    for (int i = 0; MAX 50 ; i++) {
+    for (int i = 0; i < MAX; i++) { // use i < MAX
         cout << i << " ";
     }
     return 0;
