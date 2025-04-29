@@ -8,17 +8,11 @@ int main() {
     cout << "Enter number: ";
     cin >> num;
 
-   
-    }
-
-    // Calculate the sum of digits using a for loop
+    //Calculate the sum of digits
     for (; num > 0; num /= 10) {
-        sum += num % 10; // Add the last digit to the sum
+        sum += num % 10;
     }
-
-    // Output the result
-    cout << "The sum of the digits is: " << sum << endl;
-
+    // Print the sum
+    cout << "The sum of digits is: " << sum << endl;
     return 0;
-
 }
